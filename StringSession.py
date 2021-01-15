@@ -13,3 +13,5 @@ with TelegramClient(StringSession(), APP_ID, API_HASH) as client:
         client.send_message("me",
                             f"String Session : \n\n`{session}` \n\nMade with love by @vsyzchan")
         print("Check Saved Message at Your Telegram. Powered by @vsyzchan")
+    except Exception as sed:
+        print(f"Error : {sed}")
