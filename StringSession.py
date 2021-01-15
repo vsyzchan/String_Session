@@ -8,4 +8,8 @@ APP_ID = int(input("APP ID: "))
 API_HASH = input("API HASH: ")
 
 with TelegramClient(StringSession(), APP_ID, API_HASH) as client:
-    print(client.session.save())
+    try:
+        session = client.session.save()
+        client.send_message("me",
+                            f"String Session : \n\n`{session}` \n\nMade with love by @vsyzchan")
+        print("Check Saved Message at Your Telegram. Powered by @vsyzchan")
